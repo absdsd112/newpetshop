@@ -6,6 +6,8 @@
 	import { onMount } from 'svelte';
 	import { init } from 'svelte-i18n';
 	import { browser } from '$app/environment';
+	import Banner from '$lib/components/Banner.svelte';
+	import LogoBanner from '$lib/components/LogoBanner.svelte';
 	let cart;
 
 	export const prerender = true;
@@ -28,7 +30,9 @@
 	});
 </script>
 
-<header class="bg-black">
+<header>
+	<Banner message="Get 15% off for your first order ! Using the code SURPRISE" />
+	<LogoBanner />
 	<AppBar />
 </header>
 <main>

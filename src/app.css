@@ -34,6 +34,10 @@
 	@apply rounded bg-white overflow-hidden relative;
 }
 
+.card img {
+	@apply w-full h-auto; /* Ensure images take full width of the card and maintain aspect ratio */
+}
+
 .badge {
 	@apply absolute top-2 left-2 ml-auto text-black text-sm rounded-full;
 }

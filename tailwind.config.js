@@ -14,9 +14,11 @@ export default {
 				snack: ['SnackBowl']
 			},
 			colors: {
-				darkGray: 'hsla(0, 0%, 40%, 1)',
+				darkGray: 'hsl(162, 32.10%, 56.10%)',
 				lightGray: 'hsla(0, 0%, 78%, 0.7)',
-				veryLightGray: 'hsl(0, 0%, 98%)'
+				veryLightGray: 'hsl(0, 0%, 98%)',
+				lightblue: '#ADD8E6', // Added light blue color
+				customGreen: 'hsl(162, 32.10%, 56.10%)' // Added custom green color
 			}
 		},
 		groups: ['scope']

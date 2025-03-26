@@ -5,6 +5,7 @@
 	import { scale } from 'svelte/transition';
 	import { expoIn } from 'svelte/easing';
 	import { t, locale, locales } from '$lib/i18n/i18n.js';
+	
 
 	const handleToggle = () => {
 		IsCartOpen.set(!$IsCartOpen);
@@ -13,10 +14,11 @@
 	$: cartNumber = $Cart.reduce((count, item) => count + item.qty, 0);
 </script>
 
+
 <CartDetails on:toggle={handleToggle} />
 <!-- Navbar -->
 <svelte:window bind:scrollY={y} />
-<nav class="bg-black text-white container mx-auto p-4">
+<nav class="bg-blue-400 text-white w-full p-4">
 	<!-- Language Button -->
 	<div class="absolute top-0 right-1 py-2 pr-2">
 		<select
@@ -28,26 +30,29 @@
 			{/each}
 		</select>
 	</div>
-	<div class="flex items-center md:pl-14">
-		<!-- Logo -->
-		<div class="w-32 h-22 inline-flex">
-			<a sveltekit:prefetch href="/">
-				<img src="/logo.png" alt="" />
-			</a>
-		</div>
+	<div class="flex flex-col items-center md:pl-14">
 		<!-- Menu Items -->
-		<div class="text-2xl font-bold space-x-6 pl-6 md:pl-20">
+		<div class="text-2xl font-bold space-x-6 pl-6 md:pl-0">
 			<a
 				class="hover:text-lightGray {$page.url.pathname == `/` && !$IsCartOpen ? 'border-b-2' : ''}"
 				sveltekit:prefetch
 				href="/">{$t('navbar.home')}</a
 			>
+			
+			
 			<a
 				sveltekit:prefetch
-				class="hover:text-lightGray {$page.url.pathname == `/products` && !$IsCartOpen
+				class="hover:text-lightGray {$page.url.pathname == `/woofshop` && !$IsCartOpen
 					? 'border-b-2'
 					: ''}"
-				href="/products">{$t('navbar.products')}</a
+				href="/products">Shop</a
+			>
+			<a
+				sveltekit:prefetch
+				class="hover:text-lightGray {$page.url.pathname == `/woofshop` && !$IsCartOpen
+					? 'border-b-2'
+					: ''}"
+				href="/about">About Us</a
 			>
 		</div>
 		<!-- Cart Button -->
